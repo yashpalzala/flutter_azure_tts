@@ -17,15 +17,14 @@ class Ssml {
   String get buildSsml {
     return "<speak version='1.0' "
         "xmlns='http://www.w3.org/2001/10/synthesis' "
-        "xmlns:mstts='https://www.w3.org/2001/mstts' "
         "xml:lang='${voice.locale}'>"
         "<voice xml:lang='${voice.locale}' "
         "xml:gender='${voice.gender}' "
+        "${style != null ? "xml:style='$style' " : ""}"
+        "${styleDegree != null ? "xml:styledegree='$styleDegree' " : ""}"
         "name='${voice.shortName}'>"
         "<prosody rate='$speed'>"
-        "<mstts:express-as style='$style' styledegree='$styleDegree'>"
         "$text"
-        "<\/mstts:express-as>"
         "<\/prosody><\/voice><\/speak>";
   }
 }
