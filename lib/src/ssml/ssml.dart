@@ -22,9 +22,9 @@ class Ssml {
         "xml:gender='${voice.gender}' "
         "${style != null ? "xml:style='$style' " : ""}"
         "${styleDegree != null ? "xml:styledegree='$styleDegree' " : ""}"
+        "${speed != null ? "xml:rate='$speed' " : ""}"
         "name='${voice.shortName}'>"
-        "<prosody rate='$speed'>"
         "$text"
-        "<\/prosody><\/voice><\/speak>";
+        "<\/voice><\/speak>";
   }
 }
